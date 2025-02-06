@@ -15,8 +15,8 @@ create table Sirketler(
 	halkaarz_fiyati decimal(18,2) not null,
 	halkaarz_tarihi date 
 );
-create table Portföy(
-	portföy_id int not null,
+create table PortfÃ¶y(
+	portfÃ¶y_id int not null,
 	kullanici_id int not null,
 	sirket_id int not null,
 	miktar decimal(18,3) not null,
@@ -25,13 +25,13 @@ create table Portföy(
 	FOREIGN KEY (sirket_id) REFERENCES Sirketler(sirket_id)
 );
 
-create table Ýslemler(
+create table Islemler(
 	islemler_id int primary key ,
 	kullanici_id int not null,
 	sirket_id int not null,
 	tarih date, 
 	miktar decimal(18,3) not null,
-	iþlem_tipi varchar(40) not null,
+	iÃ¾lem_tipi varchar(40) not null,
 	birim_fiyat decimal(18,2) not null,
 	FOREIGN KEY (kullanici_id) REFERENCES Kullanicilar(kullanici_id),
 	FOREIGN KEY (sirket_id) REFERENCES Sirketler(sirket_id)
@@ -39,9 +39,9 @@ create table Ýslemler(
 
 drop table Kullanicilar
 
-drop table Ýslemler
+drop table Islemler
 
-drop table Portföy
+drop table PortfÃ¶y
 
 drop table Sirketler
 
@@ -59,10 +59,10 @@ truncate table Kullanicilar
  VALUES (138794,'batur.51', 'batur.1313@gmail.com','sifre78426','2020-09-17');
 
   INSERT INTO Kullanicilar(kullanici_id,kullanici_adi,email,sifre,kayit_tarihi)
- VALUES (138795,'ömerky', 'omerkaya@gmail.com','sifre6598','2016-11-14');
+ VALUES (138795,'Ã¶merky', 'omerkaya@gmail.com','sifre6598','2016-11-14');
 
   INSERT INTO Kullanicilar(kullanici_id,kullanici_adi,email,sifre,kayit_tarihi)
- VALUES (138796,'ertuðrulorkc', 'ertugrulorakci@gmail.com','sifre5667','2023-06-22');
+ VALUES (138796,'ertuÃ°rulorkc', 'ertugrulorakci@gmail.com','sifre5667','2023-06-22');
 
  ALTER TABLE Kullanicilar
  DROP COLUMN kullanici_id;
@@ -74,73 +74,73 @@ truncate table Kullanicilar
 
 
  INSERT INTO Sirketler(sirket_id,sirket_adi,sirket_kodu,halkaarz_fiyati,halkaarz_tarihi)
- VALUES (246713,'Türk Hava Yollarý', 'THY',3.000, '1990-12-10');
+ VALUES (246713,'TÃ¼rk Hava YollarÃ½', 'THY',3.000, '1990-12-10');
 
  INSERT INTO Sirketler(sirket_id,sirket_adi,sirket_kodu,halkaarz_fiyati,halkaarz_tarihi)
- VALUES (246714,'Türkiye Petrol Rafinerileri A.Þ.', 'TUPRS',2.000, '1991-05-30');
+ VALUES (246714,'TÃ¼rkiye Petrol Rafinerileri A.Ãž.', 'TUPRS',2.000, '1991-05-30');
 
  INSERT INTO Sirketler(sirket_id,sirket_adi,sirket_kodu,halkaarz_fiyati,halkaarz_tarihi)
- VALUES (246715,'Aselsan Elektronik A.Þ. ', 'ASELS',4.000, '1990-07-01');
+ VALUES (246715,'Aselsan Elektronik A.Ãž. ', 'ASELS',4.000, '1990-07-01');
 
  INSERT INTO Sirketler(sirket_id,sirket_adi,sirket_kodu,halkaarz_fiyati,halkaarz_tarihi)
- VALUES (246716,'Ýzdemir Enerj, Elektrik Üretim A.Þ.', 'IZENR',19.00, '2023-07-08');
+ VALUES (246716,'Ãzdemir Enerj, Elektrik Ãœretim A.Ãž.', 'IZENR',19.00, '2023-07-08');
 
  INSERT INTO Sirketler(sirket_id,sirket_adi,sirket_kodu,halkaarz_fiyati,halkaarz_tarihi)
- VALUES (246717,'Mavi Giyim San. ve Tic. A.Þ.', 'MAVI',43.00, '2017-06-08');
+ VALUES (246717,'Mavi Giyim San. ve Tic. A.Ãž.', 'MAVI',43.00, '2017-06-08');
 
 
 
 
- INSERT INTO Portföy(portföy_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
+ INSERT INTO PortfÃ¶y(portfÃ¶y_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
  VALUES (319303,138792, 246714,120, '2012-08-13');
 
-  INSERT INTO Portföy(portföy_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
+  INSERT INTO PortfÃ¶y(portfÃ¶y_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
  VALUES (319303,138792, 246713,100, '2012-06-10');
 
-  INSERT INTO Portföy(portföy_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
+  INSERT INTO PortfÃ¶y(portfÃ¶y_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
  VALUES (319304,138793, 246714,150, '2022-11-09');
 
-  INSERT INTO Portföy(portföy_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
+  INSERT INTO PortfÃ¶y(portfÃ¶y_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
  VALUES (319305,138794, 246715,200, '2016-03-24');
 
-  INSERT INTO Portföy(portföy_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
+  INSERT INTO PortfÃ¶y(portfÃ¶y_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
  VALUES (319306,138795, 246716,140, '2024-05-04');
 
-  INSERT INTO Portföy(portföy_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
+  INSERT INTO PortfÃ¶y(portfÃ¶y_id,kullanici_id,sirket_id,miktar,satin_alinma_tarihi)
  VALUES (319307,138796, 246717,220, '2023-10-17');
 
-  DELETE FROM Portföy
- WHERE portföy_id = 319307;
+  DELETE FROM PortfÃ¶y
+ WHERE portfÃ¶y_id = 319307;
 
-INSERT INTO Ýslemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iþlem_tipi,birim_fiyat)
-VALUES (498021, 138792, 246717, '2012-03-15', 90, 'satýþ', 48.05);
+INSERT INTO Islemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iÃ¾lem_tipi,birim_fiyat)
+VALUES (498021, 138792, 246717, '2012-03-15', 90, 'satÃ½Ã¾', 48.05);
 
-INSERT INTO Ýslemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iþlem_tipi,birim_fiyat)
-VALUES (498022, 138792, 246714, '2012-08-13', 120, 'alýþ', 100.13);
+INSERT INTO Islemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iÃ¾lem_tipi,birim_fiyat)
+VALUES (498022, 138792, 246714, '2012-08-13', 120, 'alÃ½Ã¾', 100.13);
 
-INSERT INTO Ýslemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iþlem_tipi,birim_fiyat)
-VALUES (498023, 138792, 246713, '2012-06-10', 100, 'alýþ', 299);
+INSERT INTO Islemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iÃ¾lem_tipi,birim_fiyat)
+VALUES (498023, 138792, 246713, '2012-06-10', 100, 'alÃ½Ã¾', 299);
 
-INSERT INTO Ýslemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iþlem_tipi,birim_fiyat)
-VALUES (498024, 138793, 246714, '2022-11-09', 150, 'alýþ', 185.40);
+INSERT INTO Islemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iÃ¾lem_tipi,birim_fiyat)
+VALUES (498024, 138793, 246714, '2022-11-09', 150, 'alÃ½Ã¾', 185.40);
 
-INSERT INTO Ýslemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iþlem_tipi,birim_fiyat)
-VALUES (498025, 138794, 246715, '2016-03-24', 200, 'alýþ', 57.95);
+INSERT INTO Islemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iÃ¾lem_tipi,birim_fiyat)
+VALUES (498025, 138794, 246715, '2016-03-24', 200, 'alÃ½Ã¾', 57.95);
 
-INSERT INTO Ýslemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iþlem_tipi,birim_fiyat)
-VALUES (498026, 138795, 246716, '2024-05-04', 140, 'alýþ', 26.60);
+INSERT INTO Islemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iÃ¾lem_tipi,birim_fiyat)
+VALUES (498026, 138795, 246716, '2024-05-04', 140, 'alÃ½Ã¾', 26.60);
 
-INSERT INTO Ýslemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iþlem_tipi,birim_fiyat)
-VALUES (498027, 138796, 246717, '2023-10-17', 220, 'alýþ', 81.05);
+INSERT INTO Islemler (islemler_id, kullanici_id,sirket_id,tarih,miktar,iÃ¾lem_tipi,birim_fiyat)
+VALUES (498027, 138796, 246717, '2023-10-17', 220, 'alÃ½Ã¾', 81.05);
 
- DELETE FROM Ýslemler
+ DELETE FROM Islemler
  WHERE islemler_id = 498021;
 
 UPDATE Sirketler
 SET halkaarz_fiyati = 25.50 
 WHERE sirket_id = 246716; 
 
-SELECT DISTINCT kullanici_id FROM Portföy;
+SELECT DISTINCT kullanici_id FROM PortfÃ¶y;
 
 SELECT TOP 5 * FROM Kullanicilar ORDER BY kayit_tarihi DESC;
 
@@ -171,7 +171,7 @@ FROM Sirketler;
 
 SELECT TOP 1 kullanici_id, kullanici_adi
 FROM Kullanicilar
-ORDER BY NEWID(); -- SQL Server'da rasgele sýralama için
+ORDER BY NEWID(); -- SQL Server'da rasgele sÃ½ralama iÃ§in
 
 SELECT sirket_adi, FLOOR(halkaarz_fiyati) AS yuvarlanmis_fiyat
 FROM Sirketler;
@@ -182,71 +182,71 @@ FROM Kullanicilar;
 SELECT MIN(halkaarz_fiyati) AS en_dusuk_fiyat
 FROM Sirketler;
 
- --Where Þartý Ýle Tablo Birleþtirme
- SELECT sirket_adi AS s_adi , portföy_id AS p_id
- FROM Sirketler s, Portföy p
+ --Where ÃžartÃ½ Ãle Tablo BirleÃ¾tirme
+ SELECT sirket_adi AS s_adi , portfÃ¶y_id AS p_id
+ FROM Sirketler s, PortfÃ¶y p
  WHERE s.sirket_id = p.sirket_id
 
 select * from Sirketler
-select * from Portföy
-select * from Sirketler,Portföy where Sirketler.sirket_id=Portföy.sirket_id
+select * from PortfÃ¶y
+select * from Sirketler,PortfÃ¶y where Sirketler.sirket_id=PortfÃ¶y.sirket_id
 
---Inner Join Ýle Tablo Birleþtirme
-SELECT p.portföy_id, p.kullanici_id,p.sirket_id ,i.islemler_id
-FROM Portföy p
-INNER JOIN Ýslemler i ON p.kullanici_id = i.kullanici_id AND p.sirket_id = i.sirket_id;
+--Inner Join Ãle Tablo BirleÃ¾tirme
+SELECT p.portfÃ¶y_id, p.kullanici_id,p.sirket_id ,i.islemler_id
+FROM PortfÃ¶y p
+INNER JOIN Ãslemler i ON p.kullanici_id = i.kullanici_id AND p.sirket_id = i.sirket_id;
 
---Left Join Ýle Tablo Birleþtirme
+--Left Join Ãle Tablo BirleÃ¾tirme
 SELECT * FROM Sirketler s
-LEFT JOIN Portföy p ON s.sirket_id = p.sirket_id;
+LEFT JOIN PortfÃ¶y p ON s.sirket_id = p.sirket_id;
 
---Rýght Join Ýle Tablo Birleþtirme
+--RÃ½ght Join Ãle Tablo BirleÃ¾tirme
 SELECT * FROM Sirketler s
-RIGHT JOIN Portföy p ON s.sirket_id = p.sirket_id;
+RIGHT JOIN PortfÃ¶y p ON s.sirket_id = p.sirket_id;
 
---Full Join Ýle Tablo Birleþtirme
+--Full Join Ãle Tablo BirleÃ¾tirme
 SELECT * FROM Sirketler s
-FULL JOIN Ýslemler i ON s.sirket_id = i.sirket_id;
+FULL JOIN Islemler i ON s.sirket_id = i.sirket_id;
 
---Cross Join Ýle Tablo Birleþtirme
-SELECT * FROM Portföy p
-CROSS JOIN Ýslemler i; 
+--Cross Join Ãle Tablo BirleÃ¾tirme
+SELECT * FROM PortfÃ¶y p
+CROSS JOIN Islemler i; 
 
---Intersect Kullanýmý
-SELECT kullanici_id, sirket_id FROM Portföy
+--Intersect KullanÃ½mÃ½
+SELECT kullanici_id, sirket_id FROM PortfÃ¶y
 INTERSECT
-SELECT kullanici_id, sirket_id FROM Ýslemler;
+SELECT kullanici_id, sirket_id FROM Islemler;
 
---Except Kullanýmý
-SELECT kullanici_id, sirket_id FROM Portföy
+--Except KullanÃ½mÃ½
+SELECT kullanici_id, sirket_id FROM PortfÃ¶y
 EXCEPT
-SELECT kullanici_id, sirket_id FROM Ýslemler
+SELECT kullanici_id, sirket_id FROM Islemler
 
---Union ve Union All Kullanýmý
-SELECT kullanici_id, sirket_id FROM Portföy
+--Union ve Union All KullanÃ½mÃ½
+SELECT kullanici_id, sirket_id FROM PortfÃ¶y
 UNION
-SELECT kullanici_id, sirket_id FROM Ýslemler
+SELECT kullanici_id, sirket_id FROM Ãslemler
 
-SELECT kullanici_id, sirket_id FROM Portföy
+SELECT kullanici_id, sirket_id FROM PortfÃ¶y
 UNION ALL
-SELECT kullanici_id, sirket_id FROM Ýslemler
+SELECT kullanici_id, sirket_id FROM Islemler
 
---Subquery Kullanýmý
+--Subquery KullanÃ½mÃ½
 SELECT kullanici_id, sirket_id, miktar,
-(SELECT SUM(miktar) FROM Portföy) AS toplam_miktar
-FROM Portföy;
+(SELECT SUM(miktar) FROM PortfÃ¶y) AS toplam_miktar
+FROM PortfÃ¶y;
 
---GroupBy ve Having Yapýsý
+--GroupBy ve Having YapÃ½sÃ½
 SELECT sirket_id, AVG(miktar) AS miktar
-FROM Portföy
+FROM PortfÃ¶y
 GROUP BY sirket_id
 HAVING AVG(miktar) > 120;
 
---Between Yapýsý
-SELECT * FROM Ýslemler 
+--Between YapÃ½sÃ½
+SELECT * FROM Ãslemler 
 WHERE tarih BETWEEN '2020-01-01' AND '2024-01-01';
 
---Ýf Else Kullanýmý
+--Ãf Else KullanÃ½mÃ½
 DECLARE @kayit_tarihi date;
 
 SELECT @kayit_tarihi = k.kayit_tarihi
@@ -254,11 +254,11 @@ FROM Kullanicilar k
 JOIN Sirketler s ON k.kullanici_id = 138792; 
 
 IF @kayit_tarihi >= '2020-01-01'
-    PRINT 'Kullanýcý, son iki yýl içinde kayýt olmuþ';
+    PRINT 'KullanÃ½cÃ½, son iki yÃ½l iÃ§inde kayÃ½t olmuÃ¾';
 ELSE
-    PRINT 'Kullanýcý, son iki yýl içinde kayýt olmamýþ.';
+    PRINT 'KullanÃ½cÃ½, son iki yÃ½l iÃ§inde kayÃ½t olmamÃ½Ã¾.';
 
---if Exists Kullanýmý
+--if Exists KullanÃ½mÃ½
 DECLARE @kayit_var_mi INT;
 
 IF EXISTS (
@@ -272,20 +272,20 @@ ELSE
     SET @kayit_var_mi = 0; 
 
 IF @kayit_var_mi = 1
-    PRINT 'Kullanýcý, belirli bir tarihten sonra kayýt olmuþ.';
+    PRINT 'KullanÃ½cÃ½, belirli bir tarihten sonra kayÃ½t olmuÃ¾.';
 ELSE
-    PRINT 'Kullanýcý, belirli bir tarihten sonra kayýt olmamýþ.';
+    PRINT 'KullanÃ½cÃ½, belirli bir tarihten sonra kayÃ½t olmamÃ½Ã¾.';
 
---Case Kullanýmý
+--Case KullanÃ½mÃ½
 SELECT
 	CASE
-		WHEN s.halkaarz_fiyati > 10.00 THEN 'Halka arz fiyatý 10.00 den büyük.'
-		WHEN s.halkaarz_fiyati >= 10.00 THEN 'Halka arz fiyatý 10.00 veya daha az.'
+		WHEN s.halkaarz_fiyati > 10.00 THEN 'Halka arz fiyatÃ½ 10.00 den bÃ¼yÃ¼k.'
+		WHEN s.halkaarz_fiyati >= 10.00 THEN 'Halka arz fiyatÃ½ 10.00 veya daha az.'
 	END AS fiyat_durumu 
 FROM Kullanicilar k
 JOIN Sirketler s ON k.kullanici_id = 138792;
 
---While Döngüsü Kullanýmý
+--While DÃ¶ngÃ¼sÃ¼ KullanÃ½mÃ½
 DECLARE @kullanici_adi VARCHAR(40);
 
 DECLARE kullanici_cursor CURSOR FOR
@@ -297,7 +297,7 @@ FETCH NEXT FROM kullanici_cursor INTO @kullanici_adi;
 
 WHILE @@FETCH_STATUS = 0
 BEGIN
-    PRINT 'Kullanýcý Adý: ' + @kullanici_adi;
+    PRINT 'KullanÃ½cÃ½ AdÃ½: ' + @kullanici_adi;
 
     FETCH NEXT FROM kullanici_cursor INTO @kullanici_adi;
 END
@@ -305,14 +305,14 @@ END
 CLOSE kullanici_cursor;
 DEALLOCATE kullanici_cursor;
 
---View Kullanýmý
+--View KullanÃ½mÃ½
 CREATE VIEW KullaniciAdlari AS
 SELECT kullanici_adi
 FROM Kullanicilar;
 
 SELECT*FROM KullaniciAdlari;
 
---Stored Procedure Kullanýmý
+--Stored Procedure KullanÃ½mÃ½
 CREATE PROCEDURE KullaniciEkle
     @kullanici_adi VARCHAR(40),
     @email VARCHAR(200),
@@ -324,7 +324,7 @@ BEGIN
     VALUES (@kullanici_adi, @email, @sifre, @kayit_tarihi);
 END;
 
-EXEC KullaniciEkle 'sýlakrhn', 'sýlakarahan@email.com', 'sifre5473', '2024-04-17';
+EXEC KullaniciEkle 'sÃ½lakrhn', 'sÃ½lakarahan@email.com', 'sifre5473', '2024-04-17';
 
 --Scaler Valued Fuction 
 CREATE FUNCTION dbo.fn_KullaniciAdUzunlugu (@kullanici_adi VARCHAR(100))
@@ -335,7 +335,7 @@ BEGIN
     SET @uzunluk = LEN(@kullanici_adi);
     
     IF @uzunluk <= 10
-        RETURN 'Kýsa';
+        RETURN 'KÃ½sa';
     ELSE IF @uzunluk <= 20
         RETURN 'Orta';
     ELSE
@@ -392,4 +392,4 @@ BEGIN
 END;
 
 INSERT INTO Kullanicilar (kullanici_adi, email, sifre)
-VALUES ('kubrakrk', 'kubrakorkmaz@example.com', 'þifre2485');
+VALUES ('kubrakrk', 'kubrakorkmaz@example.com', 'Ã¾ifre2485');

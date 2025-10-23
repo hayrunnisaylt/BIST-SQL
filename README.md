@@ -1,2 +1,2 @@
 # DATABASE
-BIST endeksini örnek alarak sql dilinde bir database çalışması.
+A database study in SQL language using the BIST index as an example.
